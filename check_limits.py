@@ -20,7 +20,7 @@ def rangeCheck(value,min,max):
         if value < min:
             retValmin = 0
     if max != -1:
-        if value > max
+        if value > max:
             retValmax = 0
     print("Value not in range")
     return retValmin and retValmax
