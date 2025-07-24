@@ -13,7 +13,7 @@ def chargeCheck(charge_rate):
       print('Charge rate is out of range!')
       return False
 
-def rangeCheck(value,min,max)
+def rangeCheck(value,min,max):
     retValmin = 1
     retValmax = 1
     if min != -1:
