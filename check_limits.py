@@ -14,7 +14,7 @@ def chargeCheck(charge_rate):
       return False
 
 def battery_is_ok(temperature, soc, charge_rate):
-  return tempCheck(temperature) && socCheck(soc) && chargeCheck(charge_rate)
+  return tempCheck(temperature) and socCheck(soc) and chargeCheck(charge_rate)
 
 
 if __name__ == '__main__':
