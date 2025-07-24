@@ -25,9 +25,9 @@ def rangeCheck(value,min,max):
     return retValmin and retValmax
         
 def battery_is_ok(temperature, soc, charge_rate):
-    print("Temprature out of range") if rangeCheck(temperature,0,45) == 0
-    print("soc out of range") if rangeCheck(soc,20,80) == 0
-    print("charge_rate out of range") if rangeCheck(charge_rate,-1,0.8) == 0
+    not rangeCheck(temperature,0,45) == 0 and print("Temprature out of range")    
+    not rangeCheck(soc,20,80) == 0 and print("soc out of range")
+    not rangeCheck(charge_rate,-1,0.8) == 0 and print("charge_rate out of range")
     
 
 if __name__ == '__main__':
