@@ -1,18 +1,3 @@
-def tempCheck(temperature):
-    if temperature < 0 or temperature > 45:
-      print('Temperature is out of range!')
-      return False
-
-def socCheck(soc):
-    if soc < 20 or soc > 80:
-      print('State of Charge is out of range!')
-      return False
-
-def chargeCheck(charge_rate):
-    if charge_rate > 0.8:
-      print('Charge rate is out of range!')
-      return False
-
 def rangeCheck(value,min,max):
     retValmin = 1
     retValmax = 1
@@ -25,9 +10,16 @@ def rangeCheck(value,min,max):
     return retValmin and retValmax
         
 def battery_is_ok(temperature, soc, charge_rate):
-    not rangeCheck(temperature,0,45) == 0 and print("Temprature out of range")    
-    not rangeCheck(soc,20,80) == 0 and print("soc out of range")
-    not rangeCheck(charge_rate,-1,0.8) == 0 and print("charge_rate out of range")
+    tempVal = rangeCheck(temperature,0,45)
+    socVal = rangeCheck(soc,20,80)
+    chargeVal = rangeCheck(charge_rate,-1,0.8)
+    
+    print("Temperature out of range") if tempVal == 0 else None
+    print("soc out of range") if socVal == 0  else None
+    print("charge_rate out of range") if chargeVal == 0 else None
+    
+    
+    return bool(tempVal and socVal and chargeVal)
     
 
 if __name__ == '__main__':
