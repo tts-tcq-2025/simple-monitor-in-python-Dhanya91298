@@ -1,7 +1,10 @@
 def rangeCheck(value, minv, maxv):
+    minCheck = (minv == 'NA' or value >= minv)
+    maxCheck = (maxv == 'NA' or value <= maxv)
+    
     return (
-        (minv == 'NA' or value >= minv) and
-        (maxv == 'NA' or value <= maxv)
+        minCheck and
+        maxCheck
     )
         
 def battery_is_ok(temperature, soc, charge_rate):
