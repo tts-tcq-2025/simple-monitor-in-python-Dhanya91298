@@ -3,16 +3,12 @@ def minCheck(value, minv):
 def maxCheck(value, maxv):
     return bool(value <= maxv)
 def rangeCheck(value,minv,maxv):
-    retValmin = False
-    retValmax = False
+    retValmin = True
+    retValmax = True
     if minv != 'NA':
         retValmin = minCheck(value,minv)
-    else:
-        retValmin = True
     if maxv != 'NA':
         retValmax = maxCheck(value,maxv)
-    else:
-        retValmin = True
     return bool(retValmin and retValmax)
         
 def battery_is_ok(temperature, soc, charge_rate):
