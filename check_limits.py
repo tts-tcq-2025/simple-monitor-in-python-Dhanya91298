@@ -1,8 +1,9 @@
 def rangeCheck(value, minv, maxv):
-return (
-        (minv == 'NA' or value >= minv) and
-        (maxv == 'NA' or value <= maxv)
-    )
+    if minv != 'NA' and value < minv:
+        return False
+    if maxv != 'NA' and value > maxv:
+        return False
+    return True
         
 def battery_is_ok(temperature, soc, charge_rate):
     
